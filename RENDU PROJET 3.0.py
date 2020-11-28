@@ -444,7 +444,7 @@ def detec_anomalie(Parametre,numero):
         a=B[i]
         b=B[i-1]
         if Parametre==lum:
-            if ((a-b)/(b+1**(-100)))>=1:
+            if ((a-b)/(b+1**(-100)))>1:
                 Index.append(A[i])
                 Ano.append(a)
         else:
