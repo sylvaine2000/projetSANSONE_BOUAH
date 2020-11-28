@@ -443,9 +443,14 @@ def detec_anomalie(Parametre,numero):
     for i in range(1,n-1):
         a=B[i]
         b=B[i-1]
-        if ((a-b)/(b+1**(-100)))>=0.5:
-            Index.append(A[i])
-            Ano.append(a)
+        if Parametre==lum:
+            if ((a-b)/(b+1**(-100)))>=1:
+                Index.append(A[i])
+                Ano.append(a)
+        else:
+            if ((a-b)/(b+1**(-100)))>=0.5:
+                Index.append(A[i])
+                Ano.append(a)
     m=len(Ano)
     F=[]
     for i in range(m-1):
@@ -459,3 +464,6 @@ def detec_anomalie(Parametre,numero):
     for i in range(m-1):
         plt.axvline(x=Index[i], color='r')
     plt.show()
+    
+    
+    
